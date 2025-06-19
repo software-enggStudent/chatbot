@@ -1,0 +1,113 @@
+/* मुख्य कंटेनर */
+.chat.container {
+  width: 400px;
+  max-width: 90%;
+  height: 600px;
+  margin: 40px auto;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  font-family: sans-serif;
+  overflow: hidden;
+  background-color: #f9f9f9;
+}
+
+/* संदेश क्षेत्र */
+.messages {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* सामान्य मैसेज बबल्स */
+.message {
+  max-width: 75%;
+  padding: 8px 12px;
+  border-radius: 16px;
+  display: inline-block;
+  position: relative;
+}
+
+/* बोट के मैसेज (बाएँ) */
+.message.bot {
+  align-self: flex-start;
+  background-color: #eee;
+  color: #333;
+}
+
+/* यूजर के मैसेज (दाएँ) */
+.message.user {
+  align-self: flex-end;
+  background: #0084ff;
+  color: white;
+}
+
+/* बॉट के छोटे ट्रायंगल 'टेल' */
+.message.bot.last::before,
+.message.bot.last::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -8px;
+  width: 16px;
+  height: 16px;
+  border-radius: 0 0 0 4px;
+  background: #eee;
+}
+
+/* यूजर के 'टेल' */
+.message.user.last::before,
+.message.user.last::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: -8px;
+  width: 16px;
+  height: 16px;
+  border-radius: 0 0 4px 0;
+  background: #0084ff;
+}
+
+/* इनपुट क्षेत्र */
+.input-area {
+  padding: 12px;
+  border-top: 1px solid #ddd;
+  display: flex;
+  gap: 8px;
+  background-color: white;
+}
+
+/* इनपुट फील्ड */
+.input-area input {
+  flex: 1;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.input-area input:focus {
+  border-color: #0084ff;
+}
+
+/* Send बटन */
+.input-area button {
+  padding: 10px 16px;
+  font-size: 1rem;
+  background-color: #0084ff;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.input-area button:hover {
+  background-color: #006bbf;
+}
